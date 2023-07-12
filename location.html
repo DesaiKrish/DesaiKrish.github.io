@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title><style>
+        body {
+            background-image: url('https://images.theconversation.com/files/387012/original/file-20210301-12-pyj8jo.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop');
+            background-size: 1600px 1000px;
+            background-repeat: no-repeat;
+            font-size: 40px;
+            color: yellow; 
+        }
+        .center {
+  text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+
+.navbar {
+  background-color: #0bb5f4;
+  position: fixed;
+  top: 0;
+  height: 40px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li a {
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+    text-decoration: none;
+    color: #000;
+    border-right: 1px solid #000;
+  }
+
+  .navbar li:last-child a {
+    border-right: none;
+  }
+
+.navbar li {
+  margin: 0 px;
+  display: inline-block;
+}
+
+.navbar a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: white;
+  color: black;
+}
+
+.pagination a {
+  color: #ddd;
+  float: left;
+  padding: 8px 16px;
+  background-color: #0bb5f4;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #0bb5f4;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+    </style>
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="form1.html">Feedback</a></li>
+    </ul>
+  </div>
+    <center><p><h1>Your current location is...</h1><span id="location"></span></p></center>
+
+    <script>
+        // Get user's current location
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var location = position.coords.latitude + '"N , ' + position.coords.longitude + '"E';
+            document.getElementById('location').innerHTML = location;
+        });
+    </script>
+</body>
+</html>
