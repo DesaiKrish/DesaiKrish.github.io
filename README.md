@@ -49,8 +49,6 @@
 
 ###
 
-<img src="https://raw.githubusercontent.com/DesaiKrish/DesaiKrish/output/snake.svg" alt="Snake animation" />
-
 ###
 
 <div align="left">
